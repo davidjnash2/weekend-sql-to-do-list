@@ -3,10 +3,10 @@ Here are the assignment instructions, to be edited as worked:
 To create:
 /server
     front-end:
-        /public folder
+    x    /public folder
         HTML
-            inputs
-            table build
+        x    inputs
+        x    table build
                 columns
                     task
                     complete button
@@ -37,7 +37,7 @@ To create:
                 columns:
                     id
                     task
-                    complete or not (update) (boolean)
+                    done(true/false; start false) (update) (boolean)
 
         serverjs
     x    /modules
