@@ -7,15 +7,15 @@ To create:
         HTML
         x    inputs
         x    table build
-                columns
-                    task
-                    complete button
-                    delete button
+            x    columns
+            x        task
+            x        complete button
+            x        delete button
 
             /styles
                 CSS
                     overall fancy
-                        background color
+                    x    background color
                         font-family & size
 
                     text &/or background color styling for task-complete 
@@ -24,22 +24,45 @@ To create:
             /scripts
                 clientjs
                     POST function
+                        method: 'POST',
                     GET function
+                        method: 'GET',
                     UPDATE function
+                        method: 'PUT',
+                    DELETE function
+                        method: 'DELETE',
                     render function
+                        empty table
+                        append <tr>
+                            include
+                            data-id="" to render <tr>
+                            complete button
+                            delete button
+
+
 
     x        /vendors
     x            jquery
         
     back-end:
     x    create server
-            create to_do table
-                columns:
-                    id
-                    task
-                    done(true/false; start false) (update) (boolean)
+        x    create to_do table
+            x    columns:
+                x    id
+                x    task
+                x    done(true/false; start false) (update) (boolean)
+                x    add test data to table
+                x    add sql query to doc here
 
         serverjs
+        POST function
+            method: 'POST',
+        GET function
+            method: 'GET',
+        UPDATE function
+            method: 'PUT',
+        DELETE function
+            method: 'DELETE',
     x    /modules
     x        pooljs
     x    /routes
@@ -49,6 +72,7 @@ To create:
     x    notes
     x    database.sql
     x    gitignore
+
 
 
 The To-Do App
