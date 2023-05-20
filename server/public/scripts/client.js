@@ -4,7 +4,7 @@ $(document).ready(onReady);
 
 function onReady(){
   console.log('sir, your jQuery has arrived, sir'); // log to test
-  $('#submit-button').on('click', addTask);
+  $('#add-to-do').on('click', addTask);
   // $('').on('click', '#complete-button', completeTask);
   // $('').on('click', '#delete-button', deleteTask);
   getTasks();
@@ -22,27 +22,26 @@ function addTask(event){
     url: '/tasks',
     data: newTask
   })
-  .then((response) => {
-    console.log('response is', response);
+  .then(function(response){
+    console.log('addTask response is', response);
     $('#to-do-input').val('');
   })
-  .catch((error) => {
+  .catch(function(error){
     console.log('error with POST', error);
   })
 } // end addTask function
 
-function getTasks(event){
-  event.preventDefault();
+function getTasks(){
   console.log('in getTasks');
- $.ajax({
+  $.ajax({
     method: 'GET',
-    url: '/tasks',
+    url: '/tasks'
   })
-  .then((response) => {
-    console.log('response is', response);
+  .then(function(response){
+    console.log('getTasks response is', response);
     renderToDom(response);
   })
-  .catch((error) => {
+  .catch(function(error){
     console.log('error with GET', error);
   });
 } // end getTasks function
@@ -55,13 +54,17 @@ function getTasks(event){
 
 // } // end deleteTask
 
-function renderToDom(tasks){
- $('#to-do-display').empty();
- for (task of tasks){`
-  <tr data-id="${task.id}>
-    <td>${task.task}</td>
-    <td>${task.complete}</td>
-  </tr>
- `}
+function renderToDom(response){
+  console.log(response);
+  $('#to-do-display').empty();
+  for (thing of response){
+    $('#to-do-display').append(`
+    <tr data-id="${thing.id}>
+      <td>${thing.task}</td>
+      <td>${thing.complete}</td>
+      <td><button id="is-it-done">COMPLETE!</button></td>
+      <td><button id="delete">DELETE!</button></td>
+    </tr>
+  `)};
 }
 
