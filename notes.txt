@@ -74,6 +74,12 @@ FINISH!!!!!!!!            routejs
     x    database.sql
     x    gitignore
 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+USE <<<<<<< git merge --no-ff BRANCH-NAME >>>>>> while on main to merge in feature branch
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+
 
 
 The To-Do App
