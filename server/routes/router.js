@@ -9,7 +9,7 @@ router.get('/',(req,res)=>{
     let queryText = `SELECT * FROM "to_do_list";`;
     pool.query(queryText) 
     .then((result) => {
-        console.log(result.rows);
+        console.log('result of server GET is:', result.rows);
         res.send(result.rows);
     }).catch((error) => {
         console.log('server GET error', error);
