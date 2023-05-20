@@ -4,7 +4,7 @@ const router = express.Router();
 const pool = require('../modules/pool');
 
 // GET
-taskRouter.get('/',(req,res)=>{
+router.get('/',(req,res)=>{
     console.log('in server GET');
     let queryText = `SELECT * FROM "to_do_list";`;
     pool.query(queryText) 
@@ -21,7 +21,7 @@ taskRouter.get('/',(req,res)=>{
 
 
 // POST
-taskRouter.post('/',(req,res)=>{
+router.post('/',(req,res)=>{
     console.log('in server POST');
     const newTask = req.body;
     console.log('req.body is', req.body);
@@ -40,7 +40,7 @@ taskRouter.post('/',(req,res)=>{
 
 
 // PUT
-taskRouter.put('/:id', (req, res) => {
+router.put('/:id', (req, res) => {
     console.log('in server PUT');
     let idToUpdate = req.params.id;
     console.log('idToUpdate', idToUpdate);
@@ -57,7 +57,7 @@ taskRouter.put('/:id', (req, res) => {
 })
 
 // DELETE
-taskRouter.delete('/:id', (req, res) => {
+router.delete('/:id', (req, res) => {
     console.log('in server DELETE');
     let idToDelete = req.params.id;
     let queryText = `DELETE FROM "to_do_list" WHERE "id" = $1;`;
