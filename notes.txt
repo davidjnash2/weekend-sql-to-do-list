@@ -4,7 +4,7 @@ To create:
 /server
     front-end:
     x    /public folder
-        HTML
+    x    HTML
         x    inputs
         x    table build
             x    columns
@@ -23,21 +23,22 @@ To create:
                         needs to connect to logic, so that switched styling is (permanent)
             /scripts
                 clientjs
-                    POST function
-                        method: 'POST',
-                    GET function
-                        method: 'GET',
+                x    POST function
+                x        method: 'POST',
+                x    GET function
+                x        method: 'GET',
                     UPDATE function
                         method: 'PUT',
                     DELETE function
                         method: 'DELETE',
-                    render function
-                        empty table
-                        append <tr>
-                            include
-                            data-id="" to render <tr>
-                            complete button
-                            delete button
+                x    render function
+                x        empty table
+                x        append <tr>
+                x            include
+                x            data-id="" to render <tr>
+                x            complete button
+                x                also added un-complete button
+                x            delete button
 
 
 
@@ -55,14 +56,14 @@ To create:
                 x    add sql query to doc here
 
         serverjs
-        POST function
-            method: 'POST',
-        GET function
-            method: 'GET',
-        UPDATE function
-            method: 'PUT',
-        DELETE function
-            method: 'DELETE',
+    x    POST function
+    x        method: 'POST',
+    x    GET function
+    x        method: 'GET',
+    x    UPDATE function
+    x        method: 'PUT',
+    x    DELETE function
+    x        method: 'DELETE',
     x    /modules
     x        pooljs
     x    /routes
@@ -84,6 +85,7 @@ you will tackle this again while learning another language.
 
 Here are the specific components for the challenge:
 
+-----DONE!!!!!-----
 Create a front end experience that allows a user to create a Task.
 When the Task is created, it should be stored inside of a database (SQL)
 Whenever a Task is created the front end should refresh to show all tasks 
@@ -106,32 +108,25 @@ background color of the page
 font family and size
 text color & or background color of tasks to show whether or not they have 
 been completed
+
+-----GOOD ADVICE!!!!---- forward planning was super helpful to keep me oriented
 Approach
 We would recommend you spend some time thinking about how to approach 
 this problem. Think through all the logic that will be needed prior to writing 
 any code. Take your time, relax, remember that impostor syndrome is real, and 
 that you are capable of knocking this out of the park!
 
-
+------DONE!!!!----
 Create a Database
 Be sure to create a new database through Postico. Use the name 
 weekend-to-do-app. You will need to use this name in your 
 database connection configuration on your server.
 
-
+-----DONE!!!!-----
 Database Structure
 Please include a database.sql text file in your repo that 
 includes all of your CREATE TABLE queries. This is so we can re-create 
 your database while testing your app.
-
-
-
-
-
-
-
-
-
 
 
 
