@@ -5,9 +5,9 @@ $(document).ready(onReady);
 function onReady(){
   console.log('sir, your jQuery has arrived, sir'); // log to test
   $('#add-to-do').on('click', addTask);
+  getTasks();
   // $('').on('click', '#complete-button', completeTask);
   // $('').on('click', '#delete-button', deleteTask);
-  getTasks();
 }
 
 function addTask(event){
@@ -25,6 +25,7 @@ function addTask(event){
   .then(function(response){
     console.log('addTask response is', response);
     $('#to-do-input').val('');
+    getTasks();
   })
   .catch(function(error){
     console.log('error with POST', error);
@@ -55,16 +56,17 @@ function getTasks(){
 // } // end deleteTask
 
 function renderToDom(response){
-  console.log(response);
-  $('#to-do-display').empty();
-  for (thing of response){
-    $('#to-do-display').append(`
-    <tr data-id="${thing.id}>
-      <td>${thing.task}</td>
-      <td>${thing.complete}</td>
-      <td><button id="is-it-done">COMPLETE!</button></td>
-      <td><button id="delete">DELETE!</button></td>
+  console.log('response from database is:', response);
+  $('#list').empty();
+  for (task of response){
+    $('#list').append(`
+    <tr data-id="${task.id}">
+      <td>${task.task}</td>
+      <td class="button"><button id="yes-done">DONEZO!</button><button id="not-done">NOT!</button></td>
+      <td class="button"><button id="delete">DELETE!</button></td>
     </tr>
   `)};
-}
+} // end renderToDom function
 
+// still need to update styling for completed tasks 
+// ${task.complete}
