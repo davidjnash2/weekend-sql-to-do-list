@@ -7,9 +7,7 @@ function onReady(){
   $('#add-to-do').on('click', addTask);
   $('#list').on('click', '#delete-button', deleteTask);
   getTasks();
-  // $('#list').on('click', '#yes-done-button', completeTask);
-    // $('#list').on('click', '#not-done-button', ????uncompleteTask???); maybe in same function as complete?
-  
+  $('#list').on('click', '#yes-done-button', completeTask);
 }
 
 function addTask(event){
@@ -49,25 +47,24 @@ function getTasks(){
   });
 } // end getTasks function
 
-// // function completeTask(){
-//     console.log('in completeTask');
-  
-//     const idToUpdate = $(this).closest('tr').data('id');
-  
-//     let data = {
-//       value: false 
-//     }
-  
-//     $.ajax({
-//       method: 'PUT',
-//       url:`/tasks/${idToUpdate}`
-//     }).then(function(response){
-//       console.log('task complete updated', response);
-//       getTasks();
-//     }).catch(function(error){
-//       console.log('error with PUT', error);
-//     })
-// } // end completeTask
+
+function completeTask(){
+    console.log('in completeTask');
+    const idToUpdate = $(this).closest('tr').data('id');
+    $.ajax({
+      method: 'PUT',
+      url:`/tasks/${idToUpdate}`,
+      data: {
+        complete: true 
+      }
+    }).then(function(response){
+      console.log('PUT task as complete', response);
+      getTasks();
+    }).catch(function(error){
+      console.log('error with PUT', error);
+    })
+} // end completeTask
+
 
 function deleteTask(){
     console.log('in deleteTask');
@@ -90,12 +87,12 @@ function renderToDom(response){
     let task = response[i];
     let rowNumber = i + 1;
     $('#list').append(`
-    <tr data-id="${task.id}">
-      <td id="row-number">${rowNumber}.</td>
-      <td id="task-text">${task.task}</td>
-      <td class="button"><button id="yes-done-button">DONEZO!</button><button id="not-done-button">NOT SO!</button></td>
-      <td class="button"><button id="delete-button">DELETE!</button></td>
-    </tr>
+      <tr  data-id="${task.id}">
+        <td id="row-number">${rowNumber}.</td>
+        <td class="completed-task" id="task-text">${task.task}</td>
+        <td class="button"><button id="yes-done-button">DONEZO!</button></td>
+        <td class="button"><button id="delete-button">DELETE!</button></td>
+      </tr>
   `)};
 } // end renderToDom function
 
