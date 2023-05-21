@@ -6,10 +6,10 @@ const pool = require('../modules/pool');
 // GET
 router.get('/',(req,res)=>{
     console.log('in server GET');
-    let queryText = `SELECT * FROM "to_do_list";`;
+    let queryText = `SELECT * FROM "to_do_list" ORDER BY "id" DESC;`;
     pool.query(queryText) 
     .then((result) => {
-        console.log(result.rows);
+        console.log('result of server GET is:', result.rows);
         res.send(result.rows);
     }).catch((error) => {
         console.log('server GET error', error);
@@ -41,10 +41,12 @@ router.post('/',(req,res)=>{
 
 // PUT
 router.put('/:id', (req, res) => {
-    console.log('in server PUT');
+    console.log('in server PUT, and req.body here is:');
     let idToUpdate = req.params.id;
     console.log('idToUpdate', idToUpdate);
-    let queryText = `UPDATE "to_do_list" SET "task_complete" = true WHERE "id" = $1;`;
+    let queryText = `UPDATE "to_do_list" 
+        SET "task_complete" = true 
+        WHERE "id" = $1;`;
     pool.query(queryText,[idToUpdate])
     .then((result) => {
         console.log('Task updated!', result.rows);

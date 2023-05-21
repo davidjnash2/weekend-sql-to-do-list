@@ -10,13 +10,14 @@ To create:
             x    columns
             x        task
             x        complete button
+            x        uncomplete button
             x        delete button
 
             /styles
                 CSS
                     overall fancy
                     x    background color
-                        font-family & size
+                    x    font-family & size
 
                     text &/or background color styling for task-complete 
                         (toggle/switch?)
@@ -27,17 +28,16 @@ To create:
                 x        method: 'POST',
                 x    GET function
                 x        method: 'GET',
-                    UPDATE function
-                        method: 'PUT',
-                    DELETE function
-                        method: 'DELETE',
+                x    UPDATE function
+                x        method: 'PUT',
+                x    DELETE function
+                x        method: 'DELETE',
                 x    render function
                 x        empty table
                 x        append <tr>
                 x            include
                 x            data-id="" to render <tr>
-                x            complete button
-                x                also added un-complete button
+                x            complete button                
                 x            delete button
 
 
@@ -107,7 +107,7 @@ not the task is complete.
 Whether or not a Task is complete should also be stored in the database.
 Deleting a Task should remove it both from the front end as well as the Database.
 
-
+-----ALMOST DONE!!!!; JUST NEED TO GET COLOR TO SWITCH!
 Styling
 Use CSS styling to move the aesthetic of the page beyond the vanilla HTML look:
 background color of the page
@@ -145,7 +145,6 @@ your feature when you turn in your code.
 
 
 feature-styling-bootstrap
-
  Add Bootstrap to the front end and style it up!
 Buttons -- make the creation buttons and completion buttons green and the delete red.
 Inputs -- make your text inputs styled in the bootstrap way
@@ -154,19 +153,17 @@ the Layout section
 
 
 feature-confirm-delete
-
  In whatever fashion you would like, create an 'are you sure: yes / no' option 
  when deleting a task.
 Some styled options are Bootstrap Modal or Sweet Alerts: Use the CDN option.
 
 
+-----DONE!!!!--------
 feature-ordering-task-query
-
  Research Query Params to have the request reverse the order of the 
  returned todos.
 
 
 feature-time-completed
-
  Add the ability to record when a task was completed. Show the completed 
  date on the frontend in a pretty format.

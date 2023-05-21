@@ -6,21 +6,33 @@ h1 {
     background-color: hotpink;
     text-decoration: underline;
     text-align: center;
+    margin-bottom: 50px;
+    font-size: 70px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
+
 
 .form-center {
     display:flex;
     justify-content: center;
-  }
+    margin-bottom: 50px;
+}
 
 table {
     table-layout: fixed;
     border: 1px solid black;
-    width: 500px;
+    width: 800px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+th {
+    background-color: cornflowerblue;
+    font-size: 35px;
 }
 
 td {
     border: 1px solid black;
+    padding: 15px;
 }
 
 #to-do-list {
@@ -28,23 +40,47 @@ td {
     margin-right: auto;
 }
 
+#task-text {
+    font-size: 25px;
+    background-color:deepskyblue
+}
+
+.completed-task {
+    background-color: deeppink;
+}
+
+.uncompleted-task {
+    background-color: deepskyblue;
+}
+
+#row-number {
+    font-size: 25px;
+}
+
 .button {
     text-align: center;
+    padding: 15px;
 }
 
 .column-one {
     border: 1px solid black;
-    width: 300px;
-    text-align: center;
-}
-.column-two {
-    border: 1px solid black;
-    width: 100px;
+    width: 50px;
     text-align: center;
 }
 
+.column-two {
+    border: 1px solid black;
+    width: 325px;
+    text-align: center;
+}
 .column-three {
     border: 1px solid black;
-    width: 100px;
+    width: 200px;
+    text-align: center;
+}
+
+.column-four {
+    border: 1px solid black;
+    width: 200px;
     text-align: center;
 }
