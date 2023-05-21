@@ -42,15 +42,15 @@ td {
 
 #task-text {
     font-size: 25px;
-    background-color:deepskyblue
 }
 
-.completed-task {
-    background-color: deeppink;
-}
-
-.uncompleted-task {
+.task_complete {
     background-color: deepskyblue;
+}
+
+
+.task_incomplete {
+    background-color: deeppink;
 }
 
 #row-number {
