@@ -86,11 +86,14 @@ function deleteTask(){
 function renderToDom(response){
   console.log('response from database is:', response);
   $('#list').empty();
-  for (task of response){
+  for (let i = 0; i < response.length; i++){
+    let task = response[i];
+    let rowNumber = i + 1;
     $('#list').append(`
     <tr data-id="${task.id}">
-      <td>${task.task}</td>
-      <td class="button"><button id="yes-done-button">DONEZO!</button><button id="not-done-button">NOT!</button></td>
+      <td id="row-number">${rowNumber}.</td>
+      <td id="task-text">${task.task}</td>
+      <td class="button"><button id="yes-done-button">DONEZO!</button><button id="not-done-button">NOT SO!</button></td>
       <td class="button"><button id="delete-button">DELETE!</button></td>
     </tr>
   `)};
@@ -98,3 +101,5 @@ function renderToDom(response){
 
 // still need to update styling for completed tasks 
 // ${task.complete}
+// maybe add if conditional to render, showing change based on true or false value
+// check color swap game and fungus game for inspo

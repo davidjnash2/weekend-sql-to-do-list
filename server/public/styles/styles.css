@@ -6,26 +6,46 @@ h1 {
     background-color: hotpink;
     text-decoration: underline;
     text-align: center;
+    margin-bottom: 50px;
+    font-size: 70px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
+
 
 .form-center {
     display:flex;
     justify-content: center;
+    margin-bottom: 50px;
   }
 
 table {
     table-layout: fixed;
     border: 1px solid black;
-    width: 500px;
+    width: 775px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+th {
+    background-color: cornflowerblue;
+    font-size: 35px;
 }
 
 td {
     border: 1px solid black;
+    padding: 15px;
 }
 
 #to-do-list {
     margin-left: auto;
     margin-right: auto;
+}
+
+#yes-done-button {
+    margin-right: 7px;
+}
+
+#task-text, #row-number {
+    font-size: 25px;
 }
 
 .button {
@@ -34,17 +54,23 @@ td {
 
 .column-one {
     border: 1px solid black;
-    width: 300px;
-    text-align: center;
-}
-.column-two {
-    border: 1px solid black;
-    width: 100px;
+    width: 50px;
     text-align: center;
 }
 
+.column-two {
+    border: 1px solid black;
+    width: 325px;
+    text-align: center;
+}
 .column-three {
     border: 1px solid black;
-    width: 100px;
+    width: 200px;
+    text-align: center;
+}
+
+.column-four {
+    border: 1px solid black;
+    width: 175px;
     text-align: center;
 }
